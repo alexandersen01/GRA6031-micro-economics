@@ -1,0 +1,50 @@
+\documentclass[10pt]{article}
+
+\usepackage{parskip}
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb, graphicx, multicol, array}
+\usepackage{enumitem}
+\usepackage{amssymb}
+
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+ 
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+\begin{document}
+ 
+\title{Problem Set 1}
+\author{Jakob Sverre Alexandersen\\
+GRA8031 – Microeconomics}
+\maketitle
+ 
+\begin{problem}{1}
+The demand a monopoly faces is $p = 100 - q + A^{0.5}$, where $q$ is its quantity, $p$ its price, and $A$ its level of advertising.
+Its marginal cost of production is 10, and its cost of one unit of advertising is 1. 
+
+\begin{enumerate}[label=\alph*)]
+    \item What is the firm's profit equation?
+    \item Solve for the firm's profit maximizing price, quantity, and level of advertising.
+\end{enumerate}
+
+\end{problem}
+
+% \begin{proof}[Solution]
+\textbf{Solution:}
+    
+\begin{enumerate}[label=\alph*)]
+    \item $\pi = R - C$ where $R(q, A) = p * q \to R(q, A) = 100q - q^2 + qA^{0.5}$ \\
+    $C = 10q + A$, where the marginal cost is 10 (cost of producing one $q$) and one unit of advertising is 1.
+
+    $\therefore\quad \pi(q, A) = (100q - q^2 + qA^{0.5}) - (10q + A) = 90q - q^2 + q\sqrt{A} - A$ 
+    \item \begin{align}
+        \text{FOC:} \quad\frac{\delta\pi}{\delta q} = 0 \to 90 - 2q + \sqrt{A} = 0 \to 2q = 90 + \sqrt{A} \to q^* = \frac{90 + \sqrt{A}}{2}\\
+        \quad\frac{\delta\pi}{\delta A} = 0 \to 0.5qA^{-0.5} - 1 \to 0.5qA^{-0.5} = 1 \to qA^{-0.5} = 2 \to A^{-0.5} = \frac{2}{q} \to A^* = \bigg(\frac{2}{q}\bigg)^{-2}
+    \end{align}
+\end{enumerate}
+
+% \end{proof}
+
+\end{document}
