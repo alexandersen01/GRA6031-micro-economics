@@ -1,0 +1,303 @@
+\documentclass[10pt]{article}
+
+\usepackage{parskip}
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb, graphicx, multicol, array}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage{href-ul}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+ 
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+\begin{document}
+ 
+\title{Lecture 1}
+\author{Jakob Sverre Alexandersen\\
+GRA4156 Accounting, Valuation and Financial Economics}
+\maketitle
+
+\tableofcontents
+\newpage
+
+\section{Bundling}
+
+\begin{itemize}
+    \item Different goods are sold in \textbf{one} package at one bundle price $P_B$
+    \item One example is the office365 package, now THAT'S a bundle 
+    \item P.B.: Pure Bundling – only the bundle is sold (ex: netflix)
+    \item M.B.: Mixed bundling – consumers can choose between a bundle or each good separately (ex: a McD's meal)
+    \item Note: $\Pi^{MB} \geq \Pi^{PB}$ because MB can always replicate PB by setting high prices for the separate goods
+    \item Why it works: 
+    \begin{itemize}
+        \item Reduces variation in willingness to pay $\to$ setting ``only one price'' is less problematic!
+        \item If negative correlatiuon in willingness to pay, then bundle!!!
+    \end{itemize}
+\end{itemize}
+
+\newpage
+
+\section{Game Theory}
+
+In the majority of markets, firms interact with few competitors (oligopoly)
+\begin{itemize}
+    \item Need to consider rival's actions!
+    \item Strategic interaction in prices, outputs, R\&D, advertising…
+\end{itemize}
+
+\hfill
+
+Example of game from politics: 
+
+You have 10 staff members to distribute to:
+\begin{itemize}
+    \item City A (10 votes)
+    \item City B (6 votes)
+    \item City C (4 votes)
+\end{itemize}
+
+\hfill
+
+Where would you spend your 10 staff given the following payoffs: 
+
+\[
+\text{Opponent's staff} = 
+\begin{cases}
+    \text{more than you} & \text{you lose} \\
+    \text{same as you} & \text{split the votes} \\
+    \text{less than you} & \text{you win} \\
+\end{cases}
+\]
+
+\hfill
+
+\subsection{Overview}
+
+\textbf{Key ideas and concepts in game theory}
+
+\hfill 
+
+Oligopoly models: 
+\begin{itemize}
+    \item Cournot (firms choose quantities simultaneously)
+    \item Bertrand (firms choose prices simultaneously)
+    \item Stackelberg (firms choose prices or quantities sequentially)
+\end{itemize}
+
+\hfill 
+
+They are distinguished by:
+\begin{itemize}
+    \item Decision variable that firms choose (e.g. prices or quantities)
+    \item Timing of the underlying game (i.e. simultaneous or sequential, finite or infinite)
+\end{itemize}
+
+\newpage
+
+Use game theory to analyze situations with strategic interaction!
+\begin{itemize}
+    \item All players choose strategies (one for each player), which determine the action a player will take at any stage of the game
+    \item the combination of strategies determines the outcome 
+\end{itemize}
+
+\hfill 
+
+Hence, we have to define:
+\begin{enumerate}
+    \item the set of players: $i \in I$
+    \item the strategies: $s_i \in S$
+    \item the payoffs (utility): $u_i: S \to \mathbb{R}$
+\end{enumerate}
+
+\hfill 
+
+Common knowledge / full rationality assumption: 
+\begin{itemize}
+    \item Each player is ``fully rational'' and each agent knows this
+    \item Each player knows that each player knows the payoffs and strategies available to the players, and so on
+\end{itemize}
+
+\hfill 
+
+Since players are rational:
+\begin{itemize}
+    \item No player will choose a \textit{dominated} strategy: A strategy is dominated when it gives lower return than other strategies, irrespective of what other players do
+\end{itemize}
+
+\hfill  
+
+A strategy $s_i \in S$ is dominant for player $i$ if:
+\begin{align*}
+    u_i(s_i, s_{-i}) \geq u_i(s_i', s_{-i}) \quad\forall s_i' \in S_i \;\land\; \forall s_{-i} \in S_{-i}
+\end{align*}
+
+In plain text: ``if an action always gives a higher (lower) payoff compared to another action, whatever the other player does, we assume a player will (not) pick it''
+
+\hfill 
+
+\textbf{NOTE: all players know this, and we can rule out such strategies}
+
+\hfill 
+
+Definition (dominant strategy equilibrium)
+
+A strategy profile $s^*$ is the dominant strategy equilibrium if for each player $i, s_i^*$ is a dominant strategy
+
+\newpage
+
+\subsection{Static vs. dynamic games and strategies}
+
+\begin{itemize}
+    \item Static: players choose actions simultaneously and play once (e.g., Cournot/Bertrand)
+    \item Dynamic: players move sequentially or repeatedly (e.g., Stackelberg)
+\end{itemize}
+
+\hfill 
+
+\textbf{Pure strategies}
+
+A pure strategy is the choice by a player of a given action with certainty
+
+Ex: play left or right with certainty
+
+\hfill 
+
+\textbf{Mixed strategies}
+
+Mixed strategy is when a player might randomize between his actions 
+
+Ex: a goalkeeper who plays left with $p = 0.3$ and right with $p = 0.7$
+
+\hfill 
+
+\textbf{Solution to firms' strategic interactions requires concept of equilibrium, first formalized by John F. Nash}
+\begin{itemize}
+    \item The market will be in equilibrium when no player wants to change its current strategy, given that no other players change their current strategy
+    \item in this stable situation, players are best responding to each other: ``a strategy is a best response if it maximizes payoffs given the other player's strategy''
+\end{itemize}
+
+\hfill
+
+A Nash equilibrium is a strategy profile $s^* \in S$ such that $\forall$ players $i \in I$
+
+\begin{align*}
+    u_i(s_i^*) \geq u_i(s_i', s_{-i}^*) \quad \forall s_i' \in S_i
+\end{align*}
+
+(i.e., no player can profitably deviate given the strategies of the other players)
+
+\hfill 
+
+\textbf{Example 1}
+
+Two airlines compete in departure times (prices are set)
+
+Imagine that 
+\begin{itemize}
+    \item 70\% if consumers prefer evening departure, 30\% prefer morning departure
+    \item if airlines choose same departure times, they share the market equally
+    \item pay-offs to the airlines as determined by market shares
+\end{itemize}
+
+\newpage
+
+\textbf{what if there are no dominated or dominant strategies?}
+
+\hfill 
+
+Example: a pricing game between the two airlines 
+\begin{itemize}
+    \item 60 potential passengers with a reservation price of 500
+    \item 120 additional passengers with a reservation price of 220
+    \item assumption: price discrimination is not possible
+    \\
+    \item  costs are 200 per passenger no matter who is on the plane \\
+    \item airlines must choose between a price of 500 and a price of 220
+    \begin{itemize}
+        \item equal prices $\to$ passengers are evenly shared
+        \item different prices $\to$ cheapes airline gets \textit{all} the passengers 
+    \end{itemize}
+\end{itemize}
+
+
+\section{Oligopoly}
+
+\subsection{Oligopoly models}
+\begin{itemize}
+    \item Three main classes of oligopoly competition:
+    \begin{itemize}
+        \item Cournot 
+        \item Bertrand
+        \item Stackelberg and dynamic Hotelling
+    \end{itemize}
+    \item They are distinguished by
+    \begin{itemize}
+        \item The decision variable that firms can choose 
+        \item the timing of the underlying game 
+    \end{itemize}
+    \item Concentrate on the Cournot first
+\end{itemize}
+
+\subsubsection{Cournot competition}
+
+Assume: two firms making an identical product with demand for this product equal to:
+\begin{align*}
+    P = A - BQ = A - B(q_1 + q_2) \quad\text{($q_x$ is output firm $x$)}
+\end{align*}
+
+For each firm, $MC = c$ (i.e. constant marginal cost $c$ per unit)
+
+\hfill 
+
+What is the demand curve dacing each firm?
+\begin{itemize}
+    \item Treat the output of the other firm as constant
+    \item For firm 2, demand is $P = (A - Bq_1) - Bq_2$
+\end{itemize}
+
+\begin{align*}
+    MR_2 = (A - Bq_1) - 2Bq_2\\
+    MR = MC \\
+    A - Bq_1 - 2Bq_2 = c \\
+    \to q^*_2 = \frac{(A - c)}{2B} - \frac{q_1}{2}
+\end{align*}
+
+\newpage
+
+$q^*_2 = \frac{(A - c)}{2B} - \frac{q_1}{2} \quad$ this is the reaction function for firm 2
+\begin{itemize}
+    \item firm 2's profit-maximizing output for any output choice by firm 1
+\end{itemize}
+
+\hfill 
+
+By exactly the same argument, the reaction function for firm 1 is: 
+
+\begin{align*}
+    q^*_1 = \frac{(A - c)}{2B} - \frac{q_2}{2}
+\end{align*}
+
+\textbf{Cournot-Nash equilibrium requires that both firms be on their reaction functions!!!}
+
+In terms of $P$, note that they are the same product, customers don't really care about who sells the product: $p_1 = p_2 = p$ 
+
+\hfill 
+
+\textbf{Firm 1's problem: }
+\begin{itemize}
+    \item max $\Pi = p \times q_1 - c \times q_1 = [A - B \times (q_1 + q_2)] \times q_1 - c \times q_1$
+\end{itemize}
+
+\begin{align*}
+    FOC_{q_1}: p'_{q_1} \times q_1 + p - c = 0 \\
+    -Bq_1 + A - B(q_1 + q_2) - c = 0 \\
+    \text{Solve for } q_1 \\
+    q_1 = \frac{A - c}{2B} - \frac{q_2}{2} = q_1(q_2)
+\end{align*}
+
+$q_1$ is thus the reaction function (best response function)
+
+\end{document}
